@@ -17,3 +17,15 @@ variable "bucket_name_suffix" {
   description = "Optional bucket name suffix. Prefixed by '-'."
   type        = string
 }
+
+variable "require_sse_kms" {
+  default     = false
+  description = "Whether or not to use the require sse kms policy the standard bucket policy."
+  type        = bool
+}
+
+variable "use_standard_bucket_policy" {
+  default     = true
+  description = "Whether or not to use the standard bucket policy."
+  type        = bool
+}
