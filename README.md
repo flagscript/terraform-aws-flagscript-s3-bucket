@@ -34,7 +34,6 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_application_id"></a> [application\_id](#input\_application\_id) | Application Id | `string` | n/a | yes |
 | <a name="input_bucket_name_prefix"></a> [bucket\_name\_prefix](#input\_bucket\_name\_prefix) | Prefix for the bucket name. | `string` | n/a | yes |
 | <a name="input_bucket_name_suffix"></a> [bucket\_name\_suffix](#input\_bucket\_name\_suffix) | Optional bucket name suffix. Prefixed by '-'. | `string` | `""` | no |
 | <a name="input_require_sse_kms"></a> [require\_sse\_kms](#input\_require\_sse\_kms) | Whether or not to use the require sse kms policy the standard bucket policy. | `bool` | `false` | no |
