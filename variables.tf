@@ -11,7 +11,7 @@ variable "bucket_name_prefix" {
 }
 
 # OPTIONAL PARAMETERS
-# These parameters have reasonable defaults.
+# These parameters have reasonable defaults.s
 variable "bucket_name_suffix" {
   default     = ""
   description = "Optional bucket name suffix. Prefixed by '-'."
