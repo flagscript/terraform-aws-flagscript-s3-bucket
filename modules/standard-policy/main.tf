@@ -1,5 +1,5 @@
 # Standard Bucket Policy
-data "aws_iam_policy_document" "standard_bucket_policy_document" {
+data "aws_iam_policy_document" "bucket_policy_document" {
   statement {
     actions = [
       "s3:GetObject",
@@ -7,8 +7,8 @@ data "aws_iam_policy_document" "standard_bucket_policy_document" {
     ]
     effect = "Deny"
     resources = [
-      aws_s3_bucket.bucket.arn,
-      "${aws_s3_bucket.bucket.arn}/*",
+      "arn:aws:s3:::${var.bucket_name}",
+      "arn:aws:s3:::${var.bucket_name}/*",
     ]
 
     condition {
@@ -29,7 +29,7 @@ data "aws_iam_policy_document" "standard_bucket_policy_document" {
       actions = ["s3:PutObject"]
       effect  = "Deny"
       resources = [
-        "${aws_s3_bucket.bucket.arn}/*"
+        "arn:aws:s3:::${var.bucket_name}/*"
       ]
       sid = "DenyUnEncryptedObjectUploads"
 
@@ -47,8 +47,7 @@ data "aws_iam_policy_document" "standard_bucket_policy_document" {
 
 }
 
-resource "aws_s3_bucket_policy" "standard_bucket_policy" {
-  count  = var.use_standard_bucket_policy ? 1 : 0
-  bucket = aws_s3_bucket.bucket.id
-  policy = data.aws_iam_policy_document.standard_bucket_policy_document.json
+resource "aws_s3_bucket_policy" "bucket_policy" {
+  bucket = var.bucket_name
+  policy = data.aws_iam_policy_document.bucket_policy_document.json
 }
