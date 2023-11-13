@@ -38,8 +38,8 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "bucket_encryption
 
   rule {
     apply_server_side_encryption_by_default {
-      sse_algorithm = "aws:kms" # AWS Managed Key
+      sse_algorithm = var.is_cloudfront_bucket || var.require_sse_kms ? "AES256" : "aws:kms" # AWS Managed Key
     }
-    bucket_key_enabled = true
+    bucket_key_enabled = var.enable_bucket_key
   }
 }
