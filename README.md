@@ -36,7 +36,10 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_bucket_name_prefix"></a> [bucket\_name\_prefix](#input\_bucket\_name\_prefix) | Prefix for the bucket name. | `string` | n/a | yes |
 | <a name="input_bucket_name_suffix"></a> [bucket\_name\_suffix](#input\_bucket\_name\_suffix) | Optional bucket name suffix. Prefixed by '-'. | `string` | `""` | no |
+| <a name="input_enable_bucket_key"></a> [enable\_bucket\_key](#input\_enable\_bucket\_key) | Whether or not to use a bucket key. | `bool` | `true` | no |
+| <a name="input_is_cloudfront_bucket"></a> [is\_cloudfront\_bucket](#input\_is\_cloudfront\_bucket) | Whether or not this bucket is a cloudfront origin. | `bool` | `false` | no |
 | <a name="input_require_sse_kms"></a> [require\_sse\_kms](#input\_require\_sse\_kms) | Whether or not to use the require sse kms policy the standard bucket policy. | `bool` | `false` | no |
+| <a name="input_use_aws_owned_kms"></a> [use\_aws\_owned\_kms](#input\_use\_aws\_owned\_kms) | Whether or not to use an aws owned kms key. | `bool` | `false` | no |
 | <a name="input_use_standard_bucket_policy"></a> [use\_standard\_bucket\_policy](#input\_use\_standard\_bucket\_policy) | Whether or not to use the standard bucket policy. | `bool` | `true` | no |
 
 ## Outputs
