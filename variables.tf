@@ -36,9 +36,3 @@ variable "use_aws_owned_kms" {
   description = "Whether or not to use an aws owned kms key."
   type        = bool
 }
-
-variable "use_standard_bucket_policy" {
-  default     = true
-  description = "Whether or not to use the standard bucket policy."
-  type        = bool
-}
