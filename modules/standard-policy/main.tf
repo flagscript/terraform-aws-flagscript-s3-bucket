@@ -7,8 +7,8 @@ data "aws_iam_policy_document" "bucket_policy_document" {
     ]
     effect = "Deny"
     resources = [
-      aws_s3_bucket.bucket.arn,
-      "${aws_s3_bucket.bucket.arn}/*",
+      "arn:aws:s3:::${var.bucket_name}",
+      "arn:aws:s3:::${var.bucket_name}/*",
     ]
 
     condition {
@@ -29,7 +29,7 @@ data "aws_iam_policy_document" "bucket_policy_document" {
       actions = ["s3:PutObject"]
       effect  = "Deny"
       resources = [
-        "${aws_s3_bucket.bucket.arn}/*"
+        "arn:aws:s3:::${var.bucket_name}/*"
       ]
       sid = "DenyUnEncryptedObjectUploads"
 
