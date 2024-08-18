@@ -6,8 +6,8 @@ variable "source_bucket_name" {
 }
 
 variable "destination_bucket_name" {
-  default = "Name of the destination bucket."
-  type    = string
+  description = "Name of the destination bucket."
+  type        = string
 }
 
 # OPTIONAL PARAMETERS
