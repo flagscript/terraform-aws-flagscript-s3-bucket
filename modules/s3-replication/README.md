@@ -33,7 +33,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_destination_bucket_name"></a> [destination\_bucket\_name](#input\_destination\_bucket\_name) | n/a | `string` | `"Name of the destination bucket."` | no |
+| <a name="input_destination_bucket_name"></a> [destination\_bucket\_name](#input\_destination\_bucket\_name) | Name of the destination bucket. | `string` | n/a | yes |
 | <a name="input_filter_prefix"></a> [filter\_prefix](#input\_filter\_prefix) | Optional prefix to filter replication. | `string` | `""` | no |
 | <a name="input_replicate_delete_markers"></a> [replicate\_delete\_markers](#input\_replicate\_delete\_markers) | Whether delete markers are replicated. | `bool` | `true` | no |
 | <a name="input_source_bucket_name"></a> [source\_bucket\_name](#input\_source\_bucket\_name) | Name of the source bucket. | `string` | n/a | yes |
