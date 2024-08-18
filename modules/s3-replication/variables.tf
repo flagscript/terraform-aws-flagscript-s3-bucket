@@ -18,8 +18,9 @@ variable "filter_prefix" {
   type        = string
 }
 
-variable "replicate_delete_markers" {
-  default     = true
-  description = "Whether delete markers are replicated."
-  type        = bool
-}
+# Not allowed in v2
+# variable "replicate_delete_markers" {
+#   default     = true
+#   description = "Whether delete markers are replicated."
+#   type        = bool
+# }

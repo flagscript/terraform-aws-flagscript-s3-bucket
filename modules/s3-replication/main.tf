@@ -7,9 +7,9 @@ resource "aws_s3_bucket_replication_configuration" "replication" {
     id     = "${var.source_bucket_name}-to-${var.destination_bucket_name}-replication"
     status = "Enabled"
 
-    delete_marker_replication {
-      status = var.replicate_delete_markers ? "Enabled" : "Disabled"
-    }
+    # delete_marker_replication {
+    #   status = var.replicate_delete_markers ? "Enabled" : "Disabled"
+    # }
 
     destination {
       bucket        = local.destination_bucket_arn
