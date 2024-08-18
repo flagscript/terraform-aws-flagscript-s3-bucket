@@ -1,0 +1,32 @@
+{
+  "name": "terraform-aws-flagscript-s3-bucket",
+  "version": "0.3.0",
+  "description": "Module to create standard flagscript bucket configurations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flagscript/terraform-aws-flagscript-s3-bucket.git"
+  },
+  "keywords": [
+    "flagscript",
+    "aws",
+    "terraform",
+    "s3"
+  ],
+  "author": {
+    "name": "Greg Kaestle",
+    "email": "flagscript@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/issues"
+  },
+  "homepage": "https://github.com/flagscript/terraform-aws-flagscript-s3-bucket#readme",
+  "dependencies": {
+    "husky": "^9.1.4"
+  }
+}
