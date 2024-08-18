@@ -25,6 +25,17 @@ variable "is_cloudfront_bucket" {
   type        = bool
 }
 
+variable "object_ownership" {
+  default     = "BucketOwnerEnforced"
+  description = "Object ownership control."
+  type        = string
+
+  validation {
+    condition     = contains(["BucketOwnerEnforced", "BucketOwnerPreferred", "ObjectWriter"], var.object_ownership)
+    error_message = "Variable object_ownership must be a valid value."
+  }
+}
+
 variable "require_sse_kms" {
   default     = false
   description = "Whether or not to use the require sse kms policy the standard bucket policy."
