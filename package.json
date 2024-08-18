@@ -1,6 +1,6 @@
 {
   "name": "terraform-aws-flagscript-s3-bucket",
-  "version": "0.3.0",
+  "version": "2.1.0",
   "description": "Module to create standard flagscript bucket configurations.",
   "main": "index.js",
   "scripts": {
