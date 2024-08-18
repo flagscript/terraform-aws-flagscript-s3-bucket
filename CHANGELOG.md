@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/compare/v2.2.0...v2.3.0) (2024-08-18)
+
+
+### Features
+
+* **resolves #18:** Fix replication module variable. ([46c9624](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/commit/46c962476dbed2f48cb5c8f77451688865b572e4)), closes [#18](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/issues/18)
+
 # [2.2.0](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/compare/v2.1.1...v2.2.0) (2024-08-18)
 
 
