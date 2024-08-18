@@ -33,6 +33,14 @@ resource "aws_s3_bucket_versioning" "bucket_versioning" {
   }
 }
 
+resource "aws_s3_bucket_ownership_controls" "bucket_ownership_controls" {
+  bucket = aws_s3_bucket.bucket.id
+
+  rule {
+    object_ownership = var.object_ownership
+  }
+}
+
 resource "aws_s3_bucket_server_side_encryption_configuration" "bucket_encryption" {
   bucket = aws_s3_bucket.bucket.id
 

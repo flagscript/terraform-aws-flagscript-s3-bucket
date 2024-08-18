@@ -22,6 +22,7 @@ No modules.
 |------|------|
 | [aws_s3_bucket.bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
 | [aws_s3_bucket_notification.bucket_notification](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_notification) | resource |
+| [aws_s3_bucket_ownership_controls.bucket_ownership_controls](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_ownership_controls) | resource |
 | [aws_s3_bucket_public_access_block.bucket_public_access_block](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block) | resource |
 | [aws_s3_bucket_server_side_encryption_configuration.bucket_encryption](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_server_side_encryption_configuration) | resource |
 | [aws_s3_bucket_versioning.bucket_versioning](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_versioning) | resource |
@@ -36,6 +37,7 @@ No modules.
 | <a name="input_bucket_name_suffix"></a> [bucket\_name\_suffix](#input\_bucket\_name\_suffix) | Optional bucket name suffix. Prefixed by '-'. | `string` | `""` | no |
 | <a name="input_enable_bucket_key"></a> [enable\_bucket\_key](#input\_enable\_bucket\_key) | Whether or not to use a bucket key. | `bool` | `true` | no |
 | <a name="input_is_cloudfront_bucket"></a> [is\_cloudfront\_bucket](#input\_is\_cloudfront\_bucket) | Whether or not this bucket is a cloudfront origin. | `bool` | `false` | no |
+| <a name="input_object_ownership"></a> [object\_ownership](#input\_object\_ownership) | Object ownership control. | `string` | `"BucketOwnerEnforced"` | no |
 | <a name="input_require_sse_kms"></a> [require\_sse\_kms](#input\_require\_sse\_kms) | Whether or not to use the require sse kms policy the standard bucket policy. | `bool` | `false` | no |
 | <a name="input_use_aws_owned_kms"></a> [use\_aws\_owned\_kms](#input\_use\_aws\_owned\_kms) | Whether or not to use an aws owned kms key. | `bool` | `false` | no |
 
