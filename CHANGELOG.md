@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/compare/v2.3.0...v2.3.1) (2024-08-19)
+
+
+### Bug Fixes
+
+* **resolves #20:** Delete deletion replication ([5d529fe](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/commit/5d529fe02c6efd53df745534945415259dbdaed1)), closes [#20](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/issues/20)
+
 # [2.3.0](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/compare/v2.2.0...v2.3.0) (2024-08-18)
 
 
