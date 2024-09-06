@@ -36,12 +36,6 @@ variable "object_ownership" {
   }
 }
 
-variable "require_sse_kms" {
-  default     = false
-  description = "Whether or not to use the require sse kms policy the standard bucket policy."
-  type        = bool
-}
-
 variable "use_aws_owned_kms" {
   default     = false
   description = "Whether or not to use an aws owned kms key."
