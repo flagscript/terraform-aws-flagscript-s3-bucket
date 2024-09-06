@@ -13,16 +13,22 @@ variable "bucket_name_suffix" {
   type        = string
 }
 
-variable "kms_key_arn" {
-  default     = ""
-  description = "AWS KMS master key ID used for the SSE-KMS encryption."
-  type        = string
-}
-
 variable "enable_bucket_key" {
   default     = true
   description = "Whether or not to use a bucket key."
   type        = bool
+}
+
+variable "enable_mfa_delete" {
+  default     = false
+  description = "Specifies whether MFA delete is enabled in the bucket versioning configuration."
+  type        = bool
+}
+
+variable "kms_key_arn" {
+  default     = ""
+  description = "AWS KMS master key ID used for the SSE-KMS encryption."
+  type        = string
 }
 
 variable "object_ownership" {

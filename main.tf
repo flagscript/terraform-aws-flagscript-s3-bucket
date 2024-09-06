@@ -28,7 +28,7 @@ resource "aws_s3_bucket_notification" "bucket_notification" {
 resource "aws_s3_bucket_versioning" "bucket_versioning" {
   bucket = aws_s3_bucket.bucket.id
   versioning_configuration {
-    mfa_delete = "Disabled"
+    mfa_delete = var.enable_mfa_delete ? "Enabled" : "Disabled"
     status     = "Enabled"
   }
 }
