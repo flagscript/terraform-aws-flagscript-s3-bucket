@@ -13,15 +13,15 @@ variable "bucket_name_suffix" {
   type        = string
 }
 
+variable "kms_key_arn" {
+  default     = ""
+  description = "AWS KMS master key ID used for the SSE-KMS encryption."
+  type        = string
+}
+
 variable "enable_bucket_key" {
   default     = true
   description = "Whether or not to use a bucket key."
-  type        = bool
-}
-
-variable "is_cloudfront_bucket" {
-  default     = false
-  description = "Whether or not this bucket is a cloudfront origin."
   type        = bool
 }
 
@@ -34,10 +34,4 @@ variable "object_ownership" {
     condition     = contains(["BucketOwnerEnforced", "BucketOwnerPreferred", "ObjectWriter"], var.object_ownership)
     error_message = "Variable object_ownership must be a valid value."
   }
-}
-
-variable "use_aws_owned_kms" {
-  default     = false
-  description = "Whether or not to use an aws owned kms key."
-  type        = bool
 }
