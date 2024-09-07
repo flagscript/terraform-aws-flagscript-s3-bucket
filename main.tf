@@ -57,9 +57,10 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "bucket_encryption
 
 # Combined bucket policy
 data "aws_iam_policy_document" "merged_s3_policy_document" {
-  source_policy_documents = [
-    data.aws_iam_policy_document.bucket_policy_document.json,
-  ]
+  source_policy_documents = concat(
+    [data.aws_iam_policy_document.bucket_policy_document.json],
+    local.do_cloudfront_policy ? [data.aws_iam_policy_document.cloudfront_bucket_policy_document.json] : []
+  )
 }
 
 # Bucket policy

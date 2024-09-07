@@ -7,10 +7,22 @@ variable "bucket_name_prefix" {
 
 # OPTIONAL PARAMETERS
 # These parameters have reasonable defaults.
+variable "allow_cloudfront_write" {
+  default     = false
+  description = "Whether or not to allow writes to cloudfront distributions."
+  type        = bool
+}
+
 variable "bucket_name_suffix" {
   default     = ""
   description = "Optional bucket name suffix. Prefixed by '-'."
   type        = string
+}
+
+variable "cloudfront_distribution_arns" {
+  default     = []
+  description = "Arns of cloudfront distributions to allow access to the s3 bucket."
+  type        = list(string)
 }
 
 variable "enable_bucket_key" {
