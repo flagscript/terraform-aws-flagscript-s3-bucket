@@ -9,7 +9,7 @@ resource "aws_s3_bucket" "bucket" {
   )
 }
 
-# Block public acls
+## Block public acls
 resource "aws_s3_bucket_public_access_block" "bucket_public_access_block" {
   bucket                  = aws_s3_bucket.bucket.id
   block_public_acls       = true
@@ -18,21 +18,22 @@ resource "aws_s3_bucket_public_access_block" "bucket_public_access_block" {
   restrict_public_buckets = true
 }
 
-# Bucket eventbridge notifications
+## Bucket eventbridge notifications
 resource "aws_s3_bucket_notification" "bucket_notification" {
   bucket      = aws_s3_bucket.bucket.id
   eventbridge = true
 }
 
-# Bucket versioning
+## Bucket versioning
 resource "aws_s3_bucket_versioning" "bucket_versioning" {
   bucket = aws_s3_bucket.bucket.id
   versioning_configuration {
-    mfa_delete = "Disabled"
+    mfa_delete = var.enable_mfa_delete ? "Enabled" : "Disabled"
     status     = "Enabled"
   }
 }
 
+## Bucket ownership
 resource "aws_s3_bucket_ownership_controls" "bucket_ownership_controls" {
   bucket = aws_s3_bucket.bucket.id
 
@@ -41,13 +42,29 @@ resource "aws_s3_bucket_ownership_controls" "bucket_ownership_controls" {
   }
 }
 
+## Bucket encryption
 resource "aws_s3_bucket_server_side_encryption_configuration" "bucket_encryption" {
   bucket = aws_s3_bucket.bucket.id
 
   rule {
     apply_server_side_encryption_by_default {
-      sse_algorithm = var.is_cloudfront_bucket || var.use_aws_owned_kms ? "AES256" : "aws:kms" # AWS Managed Key
+      kms_master_key_id = local.use_owned_kms ? var.kms_key_arn : null
+      sse_algorithm     = "aws:kms"
     }
     bucket_key_enabled = var.enable_bucket_key
   }
+}
+
+# Combined bucket policy
+data "aws_iam_policy_document" "merged_s3_policy_document" {
+  source_policy_documents = concat(
+    [data.aws_iam_policy_document.bucket_policy_document.json],
+    local.do_cloudfront_policy ? [data.aws_iam_policy_document.cloudfront_bucket_policy_document.json] : []
+  )
+}
+
+# Bucket policy
+resource "aws_s3_bucket_policy" "bucket_policy" {
+  bucket = aws_s3_bucket.bucket.id
+  policy = data.aws_iam_policy_document.merged_s3_policy_document.json
 }

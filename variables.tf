@@ -7,10 +7,22 @@ variable "bucket_name_prefix" {
 
 # OPTIONAL PARAMETERS
 # These parameters have reasonable defaults.
+variable "allow_cloudfront_write" {
+  default     = false
+  description = "Whether or not to allow writes to cloudfront distributions."
+  type        = bool
+}
+
 variable "bucket_name_suffix" {
   default     = ""
   description = "Optional bucket name suffix. Prefixed by '-'."
   type        = string
+}
+
+variable "cloudfront_distribution_arns" {
+  default     = []
+  description = "Arns of cloudfront distributions to allow access to the s3 bucket."
+  type        = list(string)
 }
 
 variable "enable_bucket_key" {
@@ -19,10 +31,16 @@ variable "enable_bucket_key" {
   type        = bool
 }
 
-variable "is_cloudfront_bucket" {
+variable "enable_mfa_delete" {
   default     = false
-  description = "Whether or not this bucket is a cloudfront origin."
+  description = "Specifies whether MFA delete is enabled in the bucket versioning configuration."
   type        = bool
+}
+
+variable "kms_key_arn" {
+  default     = ""
+  description = "AWS KMS master key ID used for the SSE-KMS encryption."
+  type        = string
 }
 
 variable "object_ownership" {
@@ -34,16 +52,4 @@ variable "object_ownership" {
     condition     = contains(["BucketOwnerEnforced", "BucketOwnerPreferred", "ObjectWriter"], var.object_ownership)
     error_message = "Variable object_ownership must be a valid value."
   }
-}
-
-variable "require_sse_kms" {
-  default     = false
-  description = "Whether or not to use the require sse kms policy the standard bucket policy."
-  type        = bool
-}
-
-variable "use_aws_owned_kms" {
-  default     = false
-  description = "Whether or not to use an aws owned kms key."
-  type        = bool
 }
