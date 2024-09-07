@@ -26,7 +26,7 @@ data "aws_iam_policy_document" "bucket_policy_document" {
 
   # Enforce server-side sses3 if no kms key provided
   dynamic "statement" {
-    for_each = var.kms_key_arn == "" ? ["require_sse_s3"] : []
+    for_each = local.use_owned_kms ? [] : ["require_sse_s3"]
     content {
       actions   = ["s3:PutObject"]
       effect    = "Deny"
@@ -47,7 +47,7 @@ data "aws_iam_policy_document" "bucket_policy_document" {
 
   # Enforce server-side sse kms if kms key provided
   dynamic "statement" {
-    for_each = var.kms_key_arn != "" ? ["require_sse_kms"] : []
+    for_each = local.use_owned_kms ? ["require_sse_kms"] : []
 
     content {
       actions = ["s3:PutObject"]
