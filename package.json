@@ -1,6 +1,6 @@
 {
   "name": "terraform-aws-flagscript-s3-bucket",
-  "description": "Module to create standard flagscript bucket configurations.",
+  "description": "S3 modules for flagscript setups adhering to reasonable aws standards.",
   "scripts": {
     "prepare": "husky"
   },
