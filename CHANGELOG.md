@@ -1,3 +1,36 @@
+# [3.0.0](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/compare/v2.3.1...v3.0.0) (2024-09-07)
+
+
+### Bug Fixes
+
+* **cleanup:** remove index ([906037b](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/commit/906037b490cad5e7b68b38d739ed9ad312b5832a))
+
+
+### cicd
+
+* **resolves #28:** Cicd fix. ([44bf14d](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/commit/44bf14de26c90989ca6c2170dbdb445ed81208df)), closes [#28](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/issues/28)
+
+
+* Merge pull request #27 from flagscript/allow-owned-kms ([d915d42](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/commit/d915d4284c74a38d73afa8261c01fcc8b21dd10b)), closes [#27](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/issues/27)
+
+
+### Features
+
+* **resolves #22:** Allow kms key. ([ae9d1c6](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/commit/ae9d1c67417d7f93ab3a9535844af018a6706b44)), closes [#22](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/issues/22)
+* **resolves #22:** Refactor kms usages. ([d385112](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/commit/d38511268251580c527cb6a47dc28d7624b7f909)), closes [#22](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/issues/22)
+* **resolves #23:** husky lflint ([45f25cc](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/commit/45f25cc3bd354b36a902f6f428a9e0345eab7a90)), closes [#23](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/issues/23)
+* **resolves #24:** Allow mfa delete. ([9fe19b5](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/commit/9fe19b5b42312c90a91393f09f63cd09f12c02dd)), closes [#24](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/issues/24)
+* **resolves #25:** Merge standard policy document. ([6256e95](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/commit/6256e959ff077dd5590f7813cd2c0a494cb780fd)), closes [#25](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/issues/25)
+* **resolves #25:** Move policies to new file. ([7d201b4](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/commit/7d201b41fc39e47c4fa613e8157dc076bb988921)), closes [#25](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/issues/25)
+* **resolves #26:** Migrate cloudfront policy to main module. ([85e5643](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/commit/85e5643694fe3778c404d7ba1662f3ee1ad9a869)), closes [#26](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/issues/26)
+
+
+### BREAKING CHANGES
+
+* **resolves #28:** Policies have been moved into main module.
+* Features and policy rollup.
+* **resolves #22:** Policies have been moved into main module.
+
 ## [2.3.1](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/compare/v2.3.0...v2.3.1) (2024-08-19)
 
 
