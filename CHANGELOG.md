@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/compare/v3.0.0...v3.0.1) (2024-09-08)
+
+
+### Bug Fixes
+
+* **resolves #30:** Allow aws:kms uploads. ([f521d35](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/commit/f521d35a4e4f06cf920fd74f124c0de4edb5ee0a)), closes [#30](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/issues/30)
+
 # [3.0.0](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/compare/v2.3.1...v3.0.0) (2024-09-07)
 
 
