@@ -53,3 +53,9 @@ variable "object_ownership" {
     error_message = "Variable object_ownership must be a valid value."
   }
 }
+
+variable "use_aws_owned_kms" {
+  default     = false
+  description = "If kms_key_arn is not provided, use AES256 over aws/s3 aws managed key."
+  type        = bool
+}
