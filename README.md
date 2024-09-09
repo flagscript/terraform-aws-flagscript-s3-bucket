@@ -45,6 +45,7 @@ No modules.
 | <a name="input_enable_mfa_delete"></a> [enable\_mfa\_delete](#input\_enable\_mfa\_delete) | Specifies whether MFA delete is enabled in the bucket versioning configuration. | `bool` | `false` | no |
 | <a name="input_kms_key_arn"></a> [kms\_key\_arn](#input\_kms\_key\_arn) | AWS KMS master key ID used for the SSE-KMS encryption. | `string` | `""` | no |
 | <a name="input_object_ownership"></a> [object\_ownership](#input\_object\_ownership) | Object ownership control. | `string` | `"BucketOwnerEnforced"` | no |
+| <a name="input_use_aws_owned_kms"></a> [use\_aws\_owned\_kms](#input\_use\_aws\_owned\_kms) | If kms\_key\_arn is not provided, use AES256 over aws/s3 aws managed key. | `bool` | `false` | no |
 
 ## Outputs
 

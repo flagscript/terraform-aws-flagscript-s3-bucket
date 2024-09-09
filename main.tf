@@ -49,7 +49,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "bucket_encryption
   rule {
     apply_server_side_encryption_by_default {
       kms_master_key_id = local.use_owned_kms ? var.kms_key_arn : null
-      sse_algorithm     = "aws:kms"
+      sse_algorithm     = local.kms_key_type
     }
     bucket_key_enabled = var.enable_bucket_key
   }
