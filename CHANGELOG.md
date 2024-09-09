@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/compare/v3.0.1...v3.1.0) (2024-09-09)
+
+
+### Features
+
+* **resolves #32:** Allow AES256 ([76c9540](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/commit/76c9540c5482987a8b9b9053df4fbba9af71d5ea)), closes [#32](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/issues/32)
+
 ## [3.0.1](https://github.com/flagscript/terraform-aws-flagscript-s3-bucket/compare/v3.0.0...v3.0.1) (2024-09-08)
 
 
